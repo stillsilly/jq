@@ -90,14 +90,11 @@ telephone number：<input id="tel" name="tel">
 		var nameval=$obj.parent().parent().children().eq(0).text();
 
 		var flag=window.confirm("are you sure to delete user ["+ nameval +"]?");
-		if(!flag){
+		if(flag){
+			$obj.parent().parent().remove();
 			return false;
 		}
-
-		//delete tr
-		$obj.parent().parent().remove();
-
-		return false;
+		else return false;
 
 	}
 </script> 
