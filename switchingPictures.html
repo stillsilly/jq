@@ -107,42 +107,42 @@ img{
 
 
 
-    function showPic(index){
-        
-        $("#btnBg li").eq(index).stop(true,false).addClass("active").siblings().stop(true,false).removeClass("active")               
-        $("#pics li").eq(index).stop(true,false).fadeIn().siblings().stop(true,false).fadeOut();
+    function showPic(i){
+                
+        if (i == 5){
+            i=0;
+        };
+        if (i == -1){
+            i =4;
+        };
+        $("#btnBg li").eq(i).stop(true,false).addClass("active").siblings().stop(true,false).removeClass("active")               
+        $("#pics li").eq(i).stop(true,false).fadeIn().siblings().stop(true,false).fadeOut();
+        index =i;
     }
 
  
-    //show pictures automatically
     var Timer = setInterval(function(){
-
-        index += 1;
-        if (index == 5){
-            index=0;
-        }       
         showPic(index);
-    },1000)
-    Timer();
-    //clearInterval when mouse hovers over
+        index++
+    },1000);
+
+
     $("#picDiv").hover(function(){
         clearInterval(Timer)
+    },function(){
+        Timer = setInterval(function(){
+        showPic(index);
+        index++;
+    },1000)
     })
+
 
     //pre and next
     $("#next").click(function(){
-        if (index==4){
-            index=0;
-            showPic(index);
-        }
-        else showPic( ++index );
-    });
+            showPic(++index);
+    })
     $("#pre").click(function(){
-        if (index==0){
-            index=4;
-            showPic(index);
-        }
-        else showPic(--index);
+            showPic(--index);
     })
 
 
