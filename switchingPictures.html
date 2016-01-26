@@ -98,7 +98,6 @@ img{
 //alert("haha")
     var index=0; 
     $("#pics li").eq(0).show();
-    //var index = $(this).index();
     $("#btnBg li").mouseover(function(){
         index = $(this).index();
         $(this).eq(0).stop(true,false).addClass("active").siblings().stop(true,false).removeClass("active")
@@ -109,36 +108,28 @@ img{
 
 
     function showPic(index){
-        //index = $(this).index();
-        $("#btnBg li").eq(index).stop(true,false).addClass("active").siblings().stop(true,false).removeClass("active")
-        //alert($(this).index())       
+        
+        $("#btnBg li").eq(index).stop(true,false).addClass("active").siblings().stop(true,false).removeClass("active")               
         $("#pics li").eq(index).stop(true,false).fadeIn().siblings().stop(true,false).fadeOut();
     }
+
  
-/*    //var Timer;
-        Timer = setInterval(function(){
+    //show pictures automatically
+    var Timer = setInterval(function(){
+
         index += 1;
         if (index == 5){
             index=0;
         }       
         showPic(index);
     },1000)
-*/
-    //clearInterval
-    var Timer;
+    Timer();
+    //clearInterval when mouse hovers over
     $("#picDiv").hover(function(){
         clearInterval(Timer)
-    },function(){
-        Timer = setInterval(function(){
-        index += 1;
-        if (index == 5){
-            index=0;
-        }       
-        showPic(index);
-    },1000)
     })
 
-
+    //pre and next
     $("#next").click(function(){
         if (index==4){
             index=0;
