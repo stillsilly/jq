@@ -9,10 +9,15 @@
 #picDiv{
     width: 580px;
     height: 490px;    
-    margin: 0 auto;    
+    margin: 0 auto;
+    position: relative;    
 }
 ul{
     list-style: none;
+}
+img{
+    width: 580px;
+    height: 490px;
 }
 #pics{
     
@@ -42,7 +47,28 @@ ul{
     cursor: pointer;
 }
 #picDiv ul .active{
-    background: red;
+    background: #6ec3c8;
+}
+.preNext{
+    width: 50px;
+    height: 100px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+#picDiv:hover .preNext{ display:block;}
+
+#pre{
+    left: 0;
+}
+#next{
+    right: 0;
 }
 
 </style>
@@ -64,10 +90,12 @@ ul{
         <li id="btn btn5"><span>5</span></li>
 
     </ul>
+    <div id="pre" class="preNext"><</div>
+    <div id="next" class="preNext">></div>
     </div>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
-alert("haha")
+//alert("haha")
     var index=0; 
     $("#pics li").eq(0).show();
     //var index = $(this).index();
@@ -108,6 +136,22 @@ alert("haha")
         }       
         showPic(index);
     },1000)
+    })
+
+
+    $("#next").click(function(){
+        if (index==4){
+            index=0;
+            showPic(index);
+        }
+        else showPic( ++index );
+    });
+    $("#pre").click(function(){
+        if (index==0){
+            index=4;
+            showPic(index);
+        }
+        else showPic(--index);
     })
 
 
