@@ -67,18 +67,34 @@ ul{
     </div>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
-alert("haha")
-    
+//alert("hahaha")
+    var index=0; 
     $("#pics li").eq(0).show();
+    //var index = $(this).index();
     $("#btnBg li").mouseover(function(){
+        index = $(this).index();
         $(this).eq(0).addClass("active").siblings().removeClass("active")
-        //alert($(this).index())
-        var index = $(this).index();
+        //alert($(this).index())       
         $("#pics li").eq(index).fadeIn().siblings().fadeOut();
-    })
+    });
 
 
 
+    function showPic(index){
+        //index = $(this).index();
+        $("#btnBg li").eq(index).addClass("active").siblings().removeClass("active")
+        //alert($(this).index())       
+        $("#pics li").eq(index).fadeIn().siblings().fadeOut();
+    }
+  
+    var Timer;
+    Timer = setInterval(function(){
+        index += 1;
+        if (index == 5){
+            index=0;
+        }       
+        showPic(index);
+    },1000)
 
 </script>
 </body>
