@@ -1,0 +1,85 @@
+<html>
+<meta charset="utf-8">
+<head>
+<style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+}
+#picDiv{
+    width: 580px;
+    height: 490px;    
+    margin: 0 auto;    
+}
+ul{
+    list-style: none;
+}
+#pics{
+    
+    position: relative;;
+}
+#pics li{
+    
+    position: absolute;
+    display: none;
+}
+#btnBg {
+    top: 450px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: block;
+
+
+}
+#btnBg li{
+    display: inline-block;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    background: gray;
+    border-radius:50%; 
+    cursor: pointer;
+}
+#picDiv ul .active{
+    background: red;
+}
+
+</style>
+</head>
+<body>
+    <div id="picDiv">
+    <ul id="pics">
+        <li class="pic1"><a href=""><img src="images/cute1.bmp"></a></li>
+        <li class="pic2"><a href=""><img src="images/cute2.bmp"></a></li>
+        <li class="pic3"><a href=""><img src="images/cute3.bmp"></a></li>
+        <li class="pic4"><a href=""><img src="images/cute4.bmp"></a></li>
+        <li class="pic5"><a href=""><img src="images/cute5.bmp"></a></li>
+    </ul>
+    <ul id="btnBg">
+        <li id="btn btn1"><span>1</span></li>
+        <li id="btn btn2"><span>2</span></li>
+        <li id="btn btn3"><span>3</span></li>
+        <li id="btn btn4"><span>4</span></li>
+        <li id="btn btn5"><span>5</span></li>
+
+    </ul>
+    </div>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+alert("haha")
+    
+    $("#pics li").eq(0).show();
+    $("#btnBg li").mouseover(function(){
+        $(this).eq(0).addClass("active").siblings().removeClass("active")
+        //alert($(this).index())
+        var index = $(this).index();
+        $("#pics li").eq(index).fadeIn().siblings().fadeOut();
+    })
+
+
+
+
+</script>
+</body>
+</html>
