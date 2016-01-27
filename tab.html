@@ -8,25 +8,28 @@
     padding: 0px;
   }
   #main{
-    margin: 0 auto;
-    height: 100%
+    margin: 50px auto;
+    width: 412px;
+    height: 220px;
   }
   ul{
     list-style: none;
-
   }
 
-  li{
-    
-  }
   ul.label li{
     width: 100px;
     height: 20px;
     border: 2px solid black;
-    background: gray;
-    
-    float: left;
+    float: left; 
+    cursor: pointer;
   }
+  .default{
+    background:#F87E7B; 
+  }
+  .active{
+    background: #99D1D3;
+  }
+
   .content{
     clear: both;
   }
@@ -35,38 +38,42 @@
     height: 200px;
     
     border: 2px solid black;
-    background: red;
+    background: #99D1D3;
     display: none;
 
   }
   .active{
-    background: white;
+    background: #99D1D3;
   }
+
 </style>
 
 </head>
 <body>
-  <div class="main">
+  <div id="main">
   <ul class="label">
-    <li>label 1</li>
-    <li>label 2</li>
-    <li>label 3</li>
+    <li class="default">label 1</li>
+    <li class="default">label 2</li>
+    <li class="default">label 3</li>
   </ul>
   <ul class="content">
-    <li>content 1 miemiemie</li>
-    <li>content 2 hahaha</li>
-    <li>lalala</li>
+    <li>hello</li>
+    <li>it's interesting</li>
+    <li>miemiemie<br />hahaha<br />this is content three</li>
   </ul>
 </div>
 <script type="text/javascript" src="jquery.js"></script>
 <script>
   //alert("haha");
+  $(".label li").eq(0).addClass("active");
   $(".content li").eq(0).show();
   $(".label li").hover(function(){
     //alert($(this).index())
     var index = $(this).index();
+    $(this).eq(0).addClass("active").siblings().removeClass("active");
     $(".content li").eq(index).show().siblings().hide();
-  })
+
+  });
 </script>
 </body>
 </html>
