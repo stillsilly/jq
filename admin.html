@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+#header{
+	height: 102px;
+	width: 1037px;
+	background: #2e87c1;
+	position: relative;
+}
+#nav{
+	display: inline-block;
+}
+#header #nav ul li{
+	list-style: none;
+	float: left;
+	margin: 40px;
+	color: white;
+}
+#operation{
+	background: #2e87c1;
+	display: inline-block;
+	width: 250px;
+	right: 10px;
+	position: absolute;
+}
+#operation ul li{
+	list-style: none;
+	float: left;
+	margin-left: 10px; 
+	margin-top: 10px;
+	color: white;
+}
+#searchArea{
+	width: 180px;
+	height: 30px;
+
+	margin-top: 40px;
+	margin-left: 10px;
+
+	position: relative;
+}
+
+#search{
+	width: 180px;
+	height: 25px;
+	color: gray;
+	position: absolute;
+}
+
+#searchArea span{
+	background: url(images/search.png);
+	height: 27px;
+	width: 27px;
+	right: 0px;
+	top: 1px;
+	position: absolute;
+	
+}
+
+/*main开始*/
+#main{
+	height: 600px;
+}
+/*左侧菜单栏开始*/
+#sideBar{
+	top: 102px;
+	width: 237px;
+	height: 600px;
+	background: #2f363e;
+	position: absolute;
+	margin-top: 0;
+	display: block;
+}
+#sideBar dl{
+	margin-top: 40px;
+	margin-left: 20px;
+}
+#sideBar dt{
+	color: gray;
+}
+#sideBar dd{
+	margin-top: 20px;
+	color: white;
+
+}
+#sideBar span{
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	margin-right: 10px; 
+
+}
+#menu span{
+	border-radius: 7px;
+	background: #2f363e;
+}
+.borderColor1{
+	border: 2px solid #48D9B2;
+}
+.borderColor2{
+	border: 2px solid #5DA5D6;
+}
+.borderColor3{
+	border: 2px solid #EE4D57;
+}
+.borderColor4{
+	border: 2px solid #FFFEB8;
+}
+.borderColor5{
+	border: 2px solid #FA7801;
+}
+.borderColor6{
+	border: 2px solid #C5937A;
+}
+#quick span{
+	border-radius: 2px;
+}
+.color1{
+	background: #48B854;
+}
+.color2{
+	background: #99C2E0;
+}
+.color3{
+	background: #EE534F;
+}
+
+
+/*content开始*/
+#content{
+	display: inline-block;
+	position: absolute;
+	height: 600px;
+	width: 800px;
+	left: 237px;
+	
+}
+#line1{
+	background: #E0E4EF;
+	height: 35px;
+	width: 100%;
+	position: absolute;
+}
+
+#line1 p{
+	display: inline-block;
+	margin-top: 8px;
+}
+.p1{
+	margin-left: 5px;
+}
+.p2{
+	float: right;
+	margin-right: 10px;
+}
+
+/*table布局*/
+table{
+	margin-top: 55px;
+	border: 1px solid #D9ECD5;
+	margin-left: 5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+
+}
+table th{
+	height: 40px;
+	text-align: left;
+	background: #E0E4EF;
+	margin-left: 10px;
+	padding-left:10px;
+}
+table td{
+	height: 30px;
+	width: 100px;
+	padding-left:10px;
+}
+/*td中的内容排布*/
+.shougongdanhao{
+	padding-left: 0px;
+}
+.shougongdanhao1{
+	width: 65px;
+	height: 20px;
+	display: inline;
+}
+.shougongdanhao2{
+	width: 15px;
+	height: 20px;
+	margin-left: 0;
+	display: inline;
+}
+.wenziyuliu {
+	width: 190px;
+	height: 20px;
+}
+#caozuo{
+	display: inline;
+	float: right;
+}
+#caozuo li{
+	list-style: none;
+	float: left;
+	margin-right: 5px;
+}
+.last{
+	height: 70px;
+}
+.shadow{
+	background: #F0F3F8;
+}
+.shadow2{
+	background: #D3EDFE;
+}
+</style>
+</head>
+<body>
+	<div id="header">
+		<img src="images/sheep.png">
+		<div id="nav">
+			<div>
+			<ul>
+				<li>美容美发管理系统</li>
+				<li>预留位置位置∨</li>
+			</ul>
+			</div>
+			
+		</div>
+		<div id="operation">
+			<div>
+				<ul>
+					<li>ADMIN∨</li>
+					<li>帮助</li>
+					<li>关于</li>
+					<li>退出</li>
+				</ul>
+			</div>
+			<div id="searchArea">
+				<input type="text" id="search" name="search" value="搜索">
+				<span></span>
+			</div>
+		</div>
+		
+	</div>
+	<div id="main">
+		<div id="sideBar">
+			
+			<dl id="menu">
+				<dt>菜单</dt>
+				<dd><span class="borderColor1"></span>前台收银</dd>
+				<dd><span class="borderColor2"></span>单据信息</dd>
+				<dd><span class="borderColor3"></span>营业统计</dd>
+				<dd><span class="borderColor4"></span>会员信息</dd>
+				<dd><span class="borderColor5"></span>考勤打卡</dd>
+				<dd><span class="borderColor6"></span>员工排班</dd>
+			</dl>
+			<dl id="quick">
+				<dt>快捷通道</dt>
+				<dd><span class="color1"></span>未结账单据</dd>
+				<dd><span class="color2"></span>未预约确认列表</dd>
+				<dd><span class="color3"></span>来电信息列表</dd>
+				<ul>
+					<li class="test"></li>
+				</ul>
+			</dl>
+			
+		</div>
+		<div id="content">
+			<div id="line1">
+				<p class="p1">文字预留>文字>文字</p>
+				<p class="p2">文字预留</p>
+
+			</div>
+			<div>
+			<table border="1" cellspacing="0" cellpadding="0">
+				<tr>
+					<th colspan="8">业务单录入</th>
+				</tr>
+				<tr>
+					<td class="shadow">手工单号：</td>
+					<td class="shougongdanhao">
+						<input type="text" class="shougongdanhao1">#<input type="text" class="shougongdanhao2">
+					</td>
+					<td class="shadow"></td>
+					<td></td>
+					<td class="shadow"></td>
+					<td></td>
+					<td class="shadow"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="shadow">顾客姓名：</td>
+					<td>某某某：</td>
+					<td class="shadow"></td>
+					<td></td>
+					<td class="shadow"></td>
+					<td></td>
+					<td class="shadow"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>打单备注：</td>
+					<td colspan="7"></td>
+				</tr>
+				<tr>
+					<th class="shadow" colspan="8">
+						文字预留
+						<input type="text" class="wenziyuliu">
+						<ul id="caozuo">
+						<li>
+							<button>读卡(F1)</button>
+						</li>
+						<li><button>保存(F2)</button></li>
+						<li><button>结账(F9)</button></li>
+						<li><button>返回(F10)</button></li>
+						</ul>
+
+					</th>
+				</tr>
+				<tr>
+					<td colspan="2">>>项目消费明细表(F7):</td>
+					<td colspan="6">>>产品消费明细表(F8):</td>
+				</tr>
+				<tr>
+					<td class="shadow"></td>
+					<td></td>
+					<td class="shadow2">文字预留</td>
+					<td class="shadow2" colspan="5"></td>
+				</tr>
+				<tr>
+					<td class="shadow"></td>
+					<td></td>
+					<td class="shadow2"></td>
+					<td class="shadow2" colspan="5"></td>
+				</tr>
+				<tr>
+					<td class="shadow" colspan="2">
+						<button>读卡(F1)</button>
+						<button>读卡(F1)</button>
+					</td>
+					<td colspan="6"></td>
+				</tr>
+				<tr>
+					<td class="last" colspan="8"></td>
+				</tr>
+			</table>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>
